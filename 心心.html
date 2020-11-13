@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+           margin: 0;padding: 0;
+           
+           box-sizing: border-box;
+       }
+       .wrapper{
+           width: 200px;
+           height: 200px;
+           background: pink;
+           margin: 0 auto;
+           margin-top: 200px;
+           transform: rotate(225deg);
+           animation-name: identifier;
+           animation-duration: 3s;
+           /* animation-fill-mode: forwards; */
+           animation-iteration-count: infinite;
+           /* animation-iteration-count: unset; */
+           /* animation-delay: 2s; */
+       }
+      .wrapper::after{
+          content: "";
+           width: 200px;
+           height: 200px;
+           background: pink;
+           position: absolute;
+           transform: translateX(100px);
+           border-radius: 50%;
+      }
+      .wrapper::before{
+          content: "";
+          width: 200px;
+           height: 200px;
+           position: absolute;
+           border-radius: 50%;
+           background: pink;
+           transform: translateY(100px);
+      }
+@keyframes identifier {
+    0{
+        transform:opacity: 0;
+    }
+    20%{
+        transform: scale(0.2) rotate(225deg);
+    }
+    60%{
+        transform: scale(2) rotate(225deg);
+    }
+    100%{
+        transform: scale(1) rotate(225deg) translate(-50%,-50%);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        
+    </div>
+</body>
+</html>
